@@ -1,0 +1,55 @@
+# Local prod-like stack. Build from the repo root so api/ + engine/ are both
+# in the build context.
+#
+#   docker compose -f conf/prod/docker-compose.yml up --build
+
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: ../..
+      dockerfile: conf/prod/dockerfile.api
+    container_name: aegisdx-api
+    ports:
+      - "9627:9627"
+    restart: unless-stopped
+    env_file:
+      - ../../api/.env
+    environment:
+      - TZ=UTC
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:9627/api/health').read()"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    networks:
+      - aegisdx-network
+
+  web:
+    build:
+      context: ../..
+      dockerfile: conf/prod/dockerfile.web
+      args:
+        - WEB_DIR=web
+        - NGINX_CONF=conf/prod/nginx.conf
+    container_name: aegisdx-web
+    ports:
+      - "80:80"
+    restart: unless-stopped
+    depends_on:
+      api:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost/health"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 5s
+    networks:
+      - aegisdx-network
+
+networks:
+  aegisdx-network:
+    driver: bridge

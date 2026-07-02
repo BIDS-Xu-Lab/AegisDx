@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="800" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="aegis-grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1f2937"/>
+      <stop offset="100%" stop-color="#0b1220"/>
+    </linearGradient>
+  </defs>
+  <g id="aegisdx">
+    <!-- Shield silhouette -->
+    <path
+      d="M16 2 L27 5 V15 C27 22 22 27 16 30 C10 27 5 22 5 15 V5 Z"
+      fill="url(#aegis-grad)"
+      stroke="#ff005c"
+      stroke-width="1.2"
+      stroke-linejoin="round"/>
+    <!-- Medical cross (Dx mark) in pink accent -->
+    <path
+      d="M14 9 H18 V13 H22 V17 H18 V22 H14 V17 H10 V13 H14 Z"
+      fill="#ff005c"/>
+  </g>
+</svg>

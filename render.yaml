@@ -1,0 +1,40 @@
+# Render Blueprint — deploys the FastAPI backend at <service>.onrender.com
+# Frontend on GitHub Pages calls this URL via VITE_API_URL.
+#
+# Secrets (sync: false) are set in the Render dashboard, NOT committed.
+
+services:
+  - type: web
+    name: aegisdx-api
+    runtime: docker
+    dockerfilePath: ./conf/prod/dockerfile.api
+    dockerContext: .
+    plan: free
+    region: oregon
+    healthCheckPath: /api/health
+    envVars:
+      - key: PORT
+        value: 9627
+      - key: AEGISDX_LLM_PROVIDER
+        value: openai
+      - key: AEGISDX_BASE_MODEL
+        value: gpt-4.1
+      - key: AEGISDX_FAST_MODEL
+        value: gpt-4.1-mini
+      - key: AEGISDX_NUM_INFERENCE
+        value: "5"
+      - key: AEGISDX_ADD_REFERENCES
+        value: "true"
+      # --- secrets (set in Render UI) ---
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: OPENAI_BASE_URL
+        sync: false
+      - key: PUBMED_EMAIL
+        sync: false
+      - key: PUBMED_API_KEY
+        sync: false
+      - key: DATABASE_URL
+        sync: false
+      - key: SUPABASE_JWT_SECRET
+        sync: false

@@ -1,0 +1,46 @@
+# AegisDx API — monorepo build.
+# Build context: repository root (so both api/ and engine/ are visible).
+# From conf/prod/:
+#   docker build -f dockerfile.api -t aegisdx-api ../..
+
+FROM python:3.11-slim AS builder
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    gcc libpq-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+COPY --from=ghcr.io/astral-sh/uv:latest /uv /usr/local/bin/uv
+WORKDIR /app/api
+COPY api/pyproject.toml api/uv.lock ./
+ENV UV_COMPILE_BYTECODE=1 UV_LINK_MODE=copy
+RUN uv sync --frozen --no-install-project --no-dev
+
+FROM python:3.11-slim
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    libpq5 \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN useradd -m -u 1000 appuser
+WORKDIR /app
+
+COPY --from=builder /app/api/.venv /app/api/.venv
+
+# Application code + workflow engine (engine/ imported via ../engine sys.path)
+COPY api/ /app/api/
+COPY engine/ /app/engine/
+
+RUN chown -R appuser:appuser /app
+USER appuser
+
+ENV PATH=/app/api/.venv/bin:$PATH
+ENV PORT=9627
+EXPOSE 9627
+
+# Env vars come from the platform (Render/Fly/etc), not baked in.
+WORKDIR /app/api
+
+HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
+    CMD python -c "import urllib.request,os; urllib.request.urlopen(f'http://localhost:{os.environ.get(\"PORT\",\"9627\")}/api/health').read()" || exit 1
+
+CMD ["sh", "-c", "uvicorn server:app --host 0.0.0.0 --port ${PORT:-9627}"]

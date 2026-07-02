@@ -1,0 +1,147 @@
+{
+  "Chest Pain": [
+    "Acute Coronary Syndrome (=Acute Myocardial Infarction)",
+    "Pulmonary embolism",
+    "Aortic dissection",
+    "Tension pneumothorax",
+    "Pericardial tamponade",
+    "Esophageal rupture (Boerhaave syndrome)"
+  ],
+  "Dyspnea (Shortness of Breath)": [
+    "Acute heart failure/cardiogenic pulmonary edema",
+    "Pneumothorax (tension pneumothorax)",
+    "Acute exacerbation of COPD",
+    "Acute asthma exacerbation",
+    "Pneumonia with sepsis",
+    "Anaphylaxis",
+    "Upper airway obstruction"
+  ],
+  "Abdominal Pain": [
+    "Appendicitis",
+    "Bowel obstruction",
+    "Perforated viscus",
+    "Ruptured abdominal aortic aneurysm (AAA)",
+    "Mesenteric ischemia",
+    "Ectopic pregnancy",
+    "Ovarian torsion",
+    "Testicular torsion",
+    "Cholangitis",
+    "Acute Pancreatitis"
+  ],
+  "Headache": [
+    "Subarachnoid hemorrhage",
+    "Bacterial meningitis",
+    "Intracranial hemorrhage",
+    "Brain tumor with increased ICP",
+    "Temporal arteritis",
+    "Acute angle-closure glaucoma",
+    "Carbon monoxide poisoning",
+    "Cerebral venous thrombosis"
+  ],
+  "Altered Mental Status/Confusion": [
+    "Stroke (ischemic/hemorrhagic)",
+    "Hypoglycemia",
+    "Bacterial meningitis/encephalitis",
+    "Sepsis/septic shock",
+    "Drug intoxication/withdrawal",
+    "Hyponatremia/hypernatremia",
+    "Hepatic encephalopathy",
+    "Uremic encephalopathy",
+    "Electrolyte imbalances",
+    "Hypoxia/hypercapnia"
+  ],
+  "Fever": [
+    "Sepsis/septic shock",
+    "Bacterial meningitis",
+    "Necrotizing fasciitis",
+    "Endocarditis",
+    "Pneumonia with complications",
+    "Urinary tract infection (pyelonephritis)",
+    "Intra-abdominal abscess",
+    "Drug fever/malignant hyperthermia"
+  ],
+  "Back Pain": [
+    "Ruptured abdominal aortic aneurysm",
+    "Cauda equina syndrome",
+    "Spinal epidural abscess",
+    "Vertebral osteomyelitis",
+    "Compression fracture with neurological compromise",
+    "Kidney stones with obstruction",
+    "Pyelonephritis"
+  ],
+  "Syncome/Near Syncope": [
+    "Ventricular arrhythmias",
+    "Aortic stenosis",
+    "Hypertrophic cardiomyopathy",
+    "Pulmonary embolism",
+    "Aortic dissection",
+    "Internal bleeding (GI bleed, ruptured aneurysm)",
+    "Complete heart block",
+    "Long QT syndrome"
+  ],
+  "Palpitations": [
+    "Ventricular tachycardia",
+    "Ventricular fibrillation",
+    "Atrial fibrillation with rapid ventricular response",
+    "Supraventricular tachycardia",
+    "Heart block",
+    "Hyperthyroidism with thyroid storm",
+    "Drug-induced arrhythmias",
+    "Electrolyte imbalances",
+    "Acute Coronary Syndrome (=Acute Myocardial Infarction)"
+  ],
+  "Dizziness/Vertigo": [
+    "Stroke (posterior circulation)",
+    "Vertebrobasilar insufficiency",
+    "Cardiac arrhythmias",
+    "Hypoglycemia",
+    "Orthostatic hypotension (dehydration/bleeding)",
+    "Drug intoxication",
+    "Acoustic neuroma"
+  ],
+  "Nausea/Vomiting": [
+    "Bowel obstruction",
+    "Acute Coronary Syndrome (especially inferior MI)",
+    "Increased intracranial pressure",
+    "Diabetic ketoacidosis",
+    "Acute appendicitis",
+    "Medication toxicity",
+    "Gastroenteritis with severe dehydration"
+  ],
+  "Weakness/Fatigue": [
+    "Stroke",
+    "Acute Coronary Syndrome",
+    "Sepsis",
+    "Electrolyte imbalances",
+    "Hypoglycemia",
+    "Internal bleeding (GI bleed, ruptured aneurysm)"
+  ],
+  "Seizures": [
+    "Status epilepticus",
+    "Intracranial hemorrhage",
+    "Brain tumor",
+    "Meningitis/encephalitis",
+    "Hypoglycemia",
+    "Hyponatremia",
+    "Drug withdrawal",
+    "Eclampsia"
+  ],
+  "Sore Throat/Difficulty Swallowing": [
+    "Epiglottitis",
+    "Retropharyngeal abscess",
+    "Peritonsillar abscess",
+    "Ludwig's angina",
+    "Foreign body aspiration",
+    "Angioedema",
+    "Caustic ingestion"
+  ],
+  "Extremity Pain/Swelling": [
+    "Deep vein thrombosis",
+    "Compartment syndrome",
+    "Necrotizing fasciitis",
+    "Septic arthritis",
+    "Arterial occlusion",
+    "Fracture with neurovascular compromise",
+    "Cellulitis with systemic infection"
+  ]
+}
