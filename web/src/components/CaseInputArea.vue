@@ -74,11 +74,12 @@ const onClickSeeMore = () => {
 }
 
 const get_samples = () => {
-    // get fixed 3 samples with index
+    // 3 fabricated clinical vignettes (indices 0, 62, 63) — all
+    // "Ask a Tough Question" section, sized for DiagnosisWorkflow.
     return [
         questions[0],
-        questions[8],
-        questions[20],
+        questions[62],
+        questions[63],
     ];
 }
 </script>

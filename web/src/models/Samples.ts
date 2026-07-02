@@ -8,21 +8,15 @@ import type { ClinicalCase, EvidenceSnippet, Message } from "./ClinicalCase";
 export const questions = [
     {
         section: "Ask a Tough Question",
-        text: `A 78-year-old woman presented to the emergency department with a sore throat. She reported painful swallowing and a sensation of something stuck in her throat that had gradually developed over the course of the day. She denied having ingested a foreign body. She had no fever, congestion, cough, dyspnea, dysphagia, or prior similar episodes.
+        text: `A 58-year-old man with hypertension and hyperlipidemia presents to the emergency department with substernal chest pressure that began 90 minutes ago while shoveling snow. The pain radiates to the left arm and jaw and is associated with diaphoresis, nausea, and shortness of breath. He rates the pain 8 out of 10. He has a 30-pack-year smoking history and reports that his father died of a myocardial infarction at age 60.
 
-Her past medical history was notable for hypertension, hyperlipidemia, diabetes, and hypothyroidism. Ten years earlier, she had undergone anterior cervical spine fusion. On arrival, her vital signs were: blood pressure 168/77 mmHg, pulse 90 beats/min, respiratory rate 16 breaths/min, and temperature 36.8 °C. Examination revealed normal neck range of motion but tenderness along the mid-anterior neck without edema, mass, thyroid enlargement, or posterior oropharyngeal abnormality. She exhibited no stridor, hoarseness, drooling, sublingual swelling, or respiratory distress. Neurological examination was intact. The clinician noted she felt warm to the touch, and a repeat temperature check was ordered along with a soft tissue neck radiograph to evaluate the prior hardware and surrounding structures.
+On arrival, blood pressure is 92/58 mmHg, heart rate 108 beats per minute, respiratory rate 22, and oxygen saturation 94% on room air. He appears anxious and pale. Cardiovascular examination reveals a soft S4 gallop and no murmurs. Lungs demonstrate bibasilar crackles. Extremities are cool with delayed capillary refill.
 
-Shortly after arrival, the patient developed rigors, and repeat vitals showed fever. Given the combination of odynophagia, anterior neck tenderness, and new fever, laboratory evaluation was obtained. Results showed a WBC count of 26.3 × 10³/μL and lactate 2.1 mmol/L. The soft tissue neck radiograph was read as normal by the radiologist, but the treating physician noted possible prevertebral widening, hardware displacement, and a questionable air–fluid level, raising concern for a deep neck infection. Empiric antibiotics and antipyretics were started.
+The initial electrocardiogram shows 3 mm ST-segment elevation in leads V1 through V4 with reciprocal ST-depressions in leads II, III, and aVF. Troponin I is 4.8 ng/mL (reference less than 0.04) and BNP is 620 pg/mL. Chest radiography shows mild pulmonary vascular congestion without focal consolidation.
 
-CT neck with intravenous contrast demonstrated a peripherally enhancing fluid collection in the prevertebral space extending from C4/C5 to T1, measuring 2.4 × 1.5 × 4.2 cm. The collection was associated with surrounding inflammatory changes, small locules of gas within the prevertebral compartment, and retraction of the right C6 anterior plate screw compared to prior imaging. Inflammatory changes extended laterally toward the carotid spaces. The impression was of a prevertebral abscess potentially related to cervical hardware complications. Neurosurgery, otolaryngology, and cardiothoracic surgery were consulted.
+The patient is given aspirin 325 mg chewed, a ticagrelor 180 mg loading dose, and intravenous heparin. The cardiac catheterization team is activated. Coronary angiography reveals a 99% occlusion of the proximal left anterior descending artery with TIMI 1 flow. Percutaneous coronary intervention with a drug-eluting stent restores TIMI 3 flow.
 
-Magnetic resonance imaging confirmed the prevertebral fluid collection and soft tissue changes but did not show vertebral body destruction or spinal canal involvement. A bedside nasopharyngeal scope revealed no mucosal lesions, and a fluoroscopic esophagram did not demonstrate a definite leak.
-
-The patient was taken to the operating room for irrigation and drainage of the prevertebral collection and removal of the cervical plate hardware. During surgery, a defect in the adjacent soft tissue planes was repaired. Cultures grew Streptococcus salivarius vestibularis, Streptococcus viridans, and Corynebacterium species. The patient was admitted to the ICU and discharged six days later, neurologically intact, with a peripherally inserted central catheter for continued intravenous antibiotics.
-
-Figure 1. Soft tissue neck radiograph with prevertebral soft tissue prominence extending from C3 to T1. Red arrow: anterior cervical screw retraction. Blue arrow: subtle air–fluid interface in the prevertebral region.
-
-Figure 2. Contrast-enhanced CT neck showing a rim-enhancing prevertebral fluid collection extending from C4/C5 to T1, with associated inflammatory changes extending into the carotid spaces. Retraction of the right C6 anterior plate screw is also noted. Arrow: area of fluid collection.`
+Post-procedure the patient is admitted to the coronary care unit on norepinephrine for persistent hypotension. Transthoracic echocardiography demonstrates a left ventricular ejection fraction of 30% with apical and anteroseptal akinesis. He is transitioned to aspirin, ticagrelor, atorvastatin 80 mg, metoprolol succinate, and lisinopril once hemodynamically stable.`
     },
     {
         section: "Ask for a Quick Fact",
@@ -348,13 +342,27 @@ Figure 2. Contrast-enhanced CT neck showing a rim-enhancing prevertebral fluid c
 
     {
         section: "Ask a Tough Question",
-        text:
-            "What factors influence the decision between immunotherapy and targeted therapy for metastatic melanoma with a BRAF mutation?",
+        text: `A 22-year-old college student is brought to the emergency department by her roommate for confusion and a severe headache that started 12 hours ago. She was well until this morning, when she developed fever, photophobia, and neck stiffness. Over the past 6 hours she has become progressively more lethargic and now answers questions inconsistently. She lives in a dormitory and reports that two housemates were recently hospitalized for an unspecified illness.
+
+Vital signs on arrival: temperature 39.6°C, blood pressure 105/62 mmHg, heart rate 128 beats per minute, respiratory rate 24, and oxygen saturation 98% on room air. She is somnolent but arousable and is oriented only to person. Nuchal rigidity is present; Kernig and Brudzinski signs are positive. Small petechiae are visible on the trunk and lower extremities. Fundoscopy shows no papilledema. Cranial nerve testing is intact and there is no focal weakness.
+
+Laboratory studies show a WBC of 22.4 x 10^9/L with 88% neutrophils and 12% band forms, platelets 84 x 10^9/L, INR 1.6, lactate 3.2 mmol/L, and procalcitonin 18 ng/mL. Two sets of blood cultures are drawn.
+
+Empiric therapy with vancomycin, ceftriaxone, and dexamethasone is initiated within 30 minutes of arrival. A non-contrast head CT is unremarkable. Lumbar puncture reveals an opening pressure of 32 cm H2O; the cerebrospinal fluid is turbid, with 3,200 WBC/mm^3 (95% neutrophils), protein 320 mg/dL, glucose 22 mg/dL (with a serum glucose of 118), and a Gram stain showing gram-negative diplococci. CSF PCR is sent.
+
+She is admitted to the medical ICU. Household contacts are identified for post-exposure prophylaxis with rifampin, and the local health department is notified.`,
     },
     {
         section: "Ask a Tough Question",
-        text:
-            "How would you optimize heart-failure therapy in a patient with reduced EF, CKD, and recurrent hyperkalemia?",
+        text: `A 72-year-old woman with a history of atrial fibrillation on warfarin, hypertension, and type 2 diabetes presents to the emergency department with sudden-onset severe abdominal pain that began 4 hours ago while she was watching television. The pain is diffuse, constant, and described as "the worst pain of my life." She reports one episode of nonbloody vomiting and has not had a bowel movement since symptom onset. She denies chest pain, dyspnea, or recent trauma.
+
+On arrival: temperature 37.8°C, blood pressure 88/54 mmHg, heart rate 116 beats per minute and irregularly irregular, respiratory rate 22, oxygen saturation 96% on room air. She is diaphoretic and in obvious distress. The abdomen is soft and mildly distended, with generalized tenderness that appears disproportionate to the exam findings; there is no rebound or guarding. Bowel sounds are hypoactive. Rectal examination is heme-positive.
+
+Laboratory studies: WBC 18.6 x 10^9/L with a left shift, lactate 6.4 mmol/L, INR 2.8, base deficit -8, creatinine 1.4 mg/dL (baseline 0.9). Amylase and lipase are within normal limits. Troponin is mildly elevated at 0.12 ng/mL. The ECG confirms atrial fibrillation with rapid ventricular response.
+
+CT angiography of the abdomen and pelvis reveals a filling defect in the superior mesenteric artery with poor enhancement of the mid- and distal small bowel loops, pneumatosis intestinalis, and moderate ascites. There is no free intraperitoneal air.
+
+The patient is resuscitated with 2 L of crystalloid, given broad-spectrum antibiotics and an intravenous proton pump inhibitor, and receives fresh frozen plasma for partial reversal of anticoagulation. Vascular surgery and general surgery are consulted urgently for evaluation of acute mesenteric ischemia with likely bowel infarction.`,
     },
     {
         section: "Ask a Tough Question",
