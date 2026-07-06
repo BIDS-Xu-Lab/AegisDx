@@ -110,25 +110,23 @@ class DiagnosisWorkflow:
         workflow.add_node("generate_actions", self._generate_actions_node)
         workflow.add_node("generate_management", self._generate_management_node, defer=True)
 
-        # Set entry point
-        # workflow.set_entry_point("initial_diagnosis")
+        # Serialized flow: settle the primary differential first, then run the
+        # warning agent with the primary list as an explicit exclude constraint.
+        # This eliminates the historical overlap between predictions and
+        # warning_diagnosis that came from running the two agents in parallel.
         workflow.add_edge(START, "initial_diagnosis")
-        workflow.add_edge(START, "warning_diagnosis")
 
-        # Add edges
         workflow.add_edge("initial_diagnosis", "cluster_predictions")
-        # workflow.add_edge("initial_diagnosis", "warning_diagnosis")
         workflow.add_edge("cluster_predictions", "check_predictions")
 
-        # Conditional routing
+        # Loop: expand the differential until we have enough distinct predictions.
+        # Once "continue", route through warning_diagnosis before verify.
         workflow.add_conditional_edges(
             "check_predictions",
             self._should_generate_more,
-            {"generate_more": "generate_additional", "continue": "verify_diagnosis"},
+            {"generate_more": "generate_additional", "continue": "warning_diagnosis"},
         )
         workflow.add_edge("generate_additional", "check_predictions")
-
-        # Both warning_diagnosis and check_predictions paths converge at wait_for_both
         workflow.add_edge("warning_diagnosis", "verify_diagnosis")
         workflow.add_edge("verify_diagnosis", "generate_reasoning")
         workflow.add_edge("generate_reasoning", "overall_reasoning")
@@ -162,10 +160,14 @@ class DiagnosisWorkflow:
         return update_state
 
     async def _warning_diagnosis_node(self, state: DiagnosisState) -> DiagnosisState:
-        """Generate warning diagnosis"""
+        """Generate warning diagnosis, excluding anything already in the primary
+        differential so the two lists don't overlap."""
         self.print_func("generating warning diagnosis **************")
 
-        warning_diagnosis = await self.warning_agent.diagnose(state["case_description"])
+        warning_diagnosis = await self.warning_agent.diagnose(
+            state["case_description"],
+            exclude_diagnoses=state.get("final_predictions") or [],
+        )
         print("warning diagnosis: ", warning_diagnosis)
         update_state = {
             "warning_diagnosis": [d["warning_diagnosis"] for d in warning_diagnosis]
